@@ -10,4 +10,5 @@ import {
 })
 export class AppComponent {
   version = 'VERSION';
+  title='my-app';
 }
