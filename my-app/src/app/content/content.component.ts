@@ -33,6 +33,6 @@ export class ContentComponent {
   }
 
   ngOnInit() {
-    console.log(this.getParam());
+    
   }
 }

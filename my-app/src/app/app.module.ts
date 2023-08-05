@@ -8,19 +8,33 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import { CountComponent } from './count/count.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './store/reducer/counter.reducer';
+import { RouterModule, Routes } from '@angular/router';
+
+const Route: Routes = [
+  { path: '*', component: AppComponent },
+  { path: 'count', component: CountComponent }
+];
 
 @NgModule({
   declarations: [
     ContentComponent,
-    AppComponent
+    AppComponent,
+    CountComponent
   ],
   imports: [
     BrowserModule,
+    StoreModule.forRoot({ count: counterReducer }),
+    RouterModule.forRoot(Route),
     MatIconModule,
     MatButtonModule,
+    MatMenuModule,
     MatToolbarModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
