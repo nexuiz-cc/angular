@@ -13,6 +13,8 @@ import { CountComponent } from './count/count.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './store/reducer/counter.reducer';
 import { RouterModule, Routes } from '@angular/router';
+import { MoviesComponent } from './movies/movies.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const Route: Routes = [
   { path: '*', component: AppComponent },
@@ -23,9 +25,11 @@ const Route: Routes = [
   declarations: [
     ContentComponent,
     AppComponent,
-    CountComponent
+    CountComponent,
+    MoviesComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     StoreModule.forRoot({ count: counterReducer }),
     RouterModule.forRoot(Route),

@@ -1,0 +1,7 @@
+<div *ngFor="let item of list">
+  <h2 class="title"> {{ item.original_title }}</h2>
+  <p class="p">{{item.overview}}</p>
+  <div class="img">
+    <img src="{{ item.poster_path }}" />
+  </div>
+</div>
