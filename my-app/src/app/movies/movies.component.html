@@ -1,7 +1,34 @@
-<div *ngFor="let item of list">
-  <h2 class="title"> {{ item.original_title }}</h2>
-  <p class="p">{{item.overview}}</p>
-  <div class="img">
-    <img src="{{ item.poster_path }}" />
-  </div>
+
+<mat-card
+  class="container"
+  fxLayout="row"
+  fxLayoutWrap
+  *ngFor="let item of list"
+>
+  <img src="{{ item.poster_path }}" class="img" />
+  <p class="txt">{{ item.title}}</p>
+</mat-card>
+
+<div class="btn">
+  <p class="p">Page: {{this.pageIndex}}</p>
+  <button (click)="first()" class="first"> 
+    <mat-icon aria-hidden="false" fontIcon="first_page" class="icon_f">
+    </mat-icon>
+  </button>
+  <button (click)="previous()" class="box1">
+    <mat-icon aria-hidden="false" fontIcon="arrow_back_ios">
+    </mat-icon>
+  </button>
+  <button (click)="next()" class="box2"> 
+  <mat-icon aria-hidden="false" fontIcon="arrow_forward_ios">
+  </mat-icon>
+</button>
+<button (click)="last()" class="last"> 
+  <mat-icon aria-hidden="false"  fontIcon="last_page" class="icon_l">
+  </mat-icon>
+</button>
+
+  <div class="space">&nbsp;</div>
 </div>
+
+

@@ -15,6 +15,9 @@ import { counterReducer } from './store/reducer/counter.reducer';
 import { RouterModule, Routes } from '@angular/router';
 import { MoviesComponent } from './movies/movies.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 const Route: Routes = [
   { path: '*', component: AppComponent },
@@ -35,8 +38,11 @@ const Route: Routes = [
     RouterModule.forRoot(Route),
     MatIconModule,
     MatButtonModule,
+    MatGridListModule,
+    MatPaginatorModule,
     MatMenuModule,
     MatToolbarModule,
+    MatCardModule,
     AppRoutingModule,
     BrowserAnimationsModule,
   ],

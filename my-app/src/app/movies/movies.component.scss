@@ -1,16 +1,88 @@
-.title{
-    position: relative;
-    left: 100px;
+.mdc-card {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-right: 50px;
+  width: 290px;
+  position: relative;
+  left: 20px;
 }
 
-.img{
-    position: relative;
-    left: 140px;  
+.container {
+  background: #ffffff;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.txt {
+  position: relative;
+  top: 10px;
+  font-size: 18px;
+  display: inline-flex;
+  left: 20px;
+}
+
+.mat-paginator-range-label {
+  display: none;
+}
+@mixin btn {
+  width: 80px;
+  border: none;
+  border-radius: 6px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: row;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+}
+.btn {
+  @include btn;
+  margin-top: 20px;
+  margin-left: 1400px;
+}
+.box1 {
+  @include btn;
+  margin-left: 10px;
+}
+.box2 {
+  @include btn;
+  margin-left: 10px;
+}
+.first {
+  @include btn;
+  margin-left: -37px;
+}
+
+.last {
+  @include btn;
+  margin-left: 20px;
+}
+
+.space {
+  display: block;
+  position: relative;
+  top: 50px;
+}
+
+.icon_f,.icon_l{
+    transform: scale(1.3);
 }
 .p{
-    position: relative;
-    left: 130px;
-    width: 1000px;
-    font-size: 20px;
-    font-family: 'calling code', Courier, monospace;   
+ display: flex;
+ flex-direction: row;
+ min-width: 80px;
+ position: relative;
+ top:10px;
+ font-size: 20px;
+ right: 60px;
 }
