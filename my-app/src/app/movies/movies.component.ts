@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { MoviesService } from './movies.service';
-import { HttpResponse } from '@angular/common/http';
-import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-movies',

@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { EffectsModule } from '@ngrx/effects';
 
 const Route: Routes = [
   { path: '*', component: AppComponent },
@@ -45,6 +46,7 @@ const Route: Routes = [
     MatCardModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]
