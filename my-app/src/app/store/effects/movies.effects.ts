@@ -9,7 +9,7 @@ export class MoviesEffects {
 
   loadMovies$ = createEffect(() => this.actions$.pipe(
     ofType('[Movies Page] Load Movies'),
-    exhaustMap(() => this.moviesService.getAll()
+    exhaustMap(() => this.moviesService.getResponse(1)
       .pipe(
         map(movies => ({ type: '[Movies API] Movies Loaded Success', payload: movies })),
         catchError(() => EMPTY)
