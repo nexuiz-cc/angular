@@ -11,6 +11,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import { CountComponent } from './count/count.component';
 import { StoreModule } from '@ngrx/store';
+import { MoviesService } from './movies/movies.service';
 import { counterReducer } from './store/reducer/counter.reducer';
 import { RouterModule, Routes } from '@angular/router';
 import { MoviesComponent } from './movies/movies.component';
@@ -19,6 +20,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { EffectsModule } from '@ngrx/effects';
+import { moviesReducer } from './store/reducer/movies.reducer';
 
 const Route: Routes = [
   { path: '*', component: AppComponent },
@@ -35,7 +37,7 @@ const Route: Routes = [
   imports: [
     HttpClientModule,
     BrowserModule,
-    StoreModule.forRoot({ count: counterReducer }),
+    StoreModule.forRoot({ count: counterReducer,movies: moviesReducer}),
     RouterModule.forRoot(Route),
     MatIconModule,
     MatButtonModule,
@@ -48,7 +50,7 @@ const Route: Routes = [
     BrowserAnimationsModule,
     EffectsModule.forRoot([]),
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
