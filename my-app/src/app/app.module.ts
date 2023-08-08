@@ -23,9 +23,12 @@ import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { moviesReducer } from './store/reducer/movies.reducer';
 
+
+
 const Route: Routes = [
   { path: '*', component: AppComponent },
-  { path: 'count', component: CountComponent }
+  { path: 'count', component: CountComponent },
+  { path: 'dialog', component: DialogComponent },
 ];
 
 @NgModule({
@@ -34,7 +37,7 @@ const Route: Routes = [
     AppComponent,
     CountComponent,
     MoviesComponent,
-    DialogComponent
+    DialogComponent,
   ],
   imports: [
     HttpClientModule,

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MatDialog ,MatDialogRef } from '@angular/material/dialog';
+import { MatDialog ,MatDialogRef,MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-dialog',
@@ -7,14 +8,16 @@ import { MatDialog ,MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog
+    ) {}
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    this.dialog.open(Dialog, {
+  openDialog(): void {
+    const dialogRef = this.dialog.open(Dialog, {
       width: '1000px',
       panelClass: 'custom-dialog-container',
-      enterAnimationDuration,
-      exitAnimationDuration,
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
     });
   }
 }
@@ -23,7 +26,14 @@ export class DialogComponent {
 @Component({
   selector: 'dialog-animations-example-dialog',
   templateUrl: './dialog-animations-example-dialog.html',
+  standalone: true,
+  imports: [MatButtonModule, MatDialogModule],
 })
 export class Dialog {
-  constructor(public dialogRef: MatDialogRef<Dialog>) {}
+  
+  constructor(public dialogRef: MatDialogRef<Dialog>
+    ) {}
+    close(){
+      this.dialogRef.close()
+    }
 }

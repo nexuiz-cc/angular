@@ -20,9 +20,10 @@ export class MoviesComponent {
     private store: Store<{ movies: any }>
   ) {
     this.movie.sendData();
-    this.movies$ = store.select('movies')
-    store.select('movies').subscribe((data:any) => this.list=data.state.items
-     );
+    this.movies$ = store.select('movies');
+    store
+      .select('movies')
+      .subscribe((data: any) => (this.list = data.state.items));
     this.movie.getResponse(1).subscribe({
       next: (response: any) => {
         this.data = response;
