@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { MoviesService } from './movies.service';
-import { HttpResponse } from '@angular/common/http';
-import { PageEvent } from '@angular/material/paginator';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { success } from '../store/actions/movies.action';
+import { url1, headers } from './urlpath';
 
 @Component({
   selector: 'app-movies',
@@ -12,20 +14,25 @@ export class MoviesComponent {
   data: any = {};
   list: any = [];
   pageIndex = 1;
-  constructor(private movie: MoviesService) {
+  movies$: Observable<any>;
+  constructor(
+    private movie: MoviesService,
+    private store: Store<{ movies: any }>
+  ) {
+    this.movie.sendData();
+    this.movies$ = store.select('movies')
+    store.select('movies').subscribe((data:any) => this.list=data.state.items
+     );
     this.movie.getResponse(1).subscribe({
       next: (response: any) => {
-        console.log(response);
         this.data = response;
-        this.data.body.results[15].title= 'The Venture Bros.';
-        console.log(this.data.body.results[15].title);
+        this.data.body.results[15].title = 'The Venture Bros.';
         this.list = this.data.body.results;
         for (let i = 0; i < this.data.body?.results.length; i++) {
           this.data.body.results[i].poster_path =
             'https://image.tmdb.org/t/p/w342' +
             this.data.body.results[i].poster_path;
         }
-        
       },
       error: (e) => {
         switch (e.status) {
@@ -38,12 +45,10 @@ export class MoviesComponent {
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
 
-  }
-
-  first(){
-    this.pageIndex=1;
+  first() {
+    this.pageIndex = 1;
     this.movie.getResponse(this.pageIndex).subscribe({
       next: (response: any) => {
         console.log(response);
@@ -66,8 +71,8 @@ export class MoviesComponent {
     });
   }
 
-  last(){
-    this.pageIndex=500;
+  last() {
+    this.pageIndex = 500;
     this.movie.getResponse(this.pageIndex).subscribe({
       next: (response: any) => {
         console.log(response);
@@ -89,7 +94,7 @@ export class MoviesComponent {
       complete: () => console.info('complete'),
     });
   }
-  
+
   next() {
     this.pageIndex++;
     this.movie.getResponse(this.pageIndex).subscribe({
@@ -114,7 +119,7 @@ export class MoviesComponent {
     });
   }
 
-  previous(){
+  previous() {
     this.pageIndex--;
     this.movie.getResponse(this.pageIndex).subscribe({
       next: (response: any) => {
@@ -126,8 +131,6 @@ export class MoviesComponent {
             'https://image.tmdb.org/t/p/w342' +
             this.data.body.results[i].poster_path;
         }
-        
-      
       },
       error: (e) => {
         switch (e.status) {
@@ -139,7 +142,4 @@ export class MoviesComponent {
       complete: () => console.info('complete'),
     });
   }
-
-  
-
 }
