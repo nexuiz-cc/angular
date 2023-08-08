@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { DialogComponent } from './dialog/dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const Route: Routes = [
   { path: '*', component: AppComponent },
@@ -29,7 +31,8 @@ const Route: Routes = [
     ContentComponent,
     AppComponent,
     CountComponent,
-    MoviesComponent
+    MoviesComponent,
+    DialogComponent
   ],
   imports: [
     HttpClientModule,
@@ -44,6 +47,7 @@ const Route: Routes = [
     MatToolbarModule,
     MatCardModule,
     AppRoutingModule,
+    MatDialogModule,
     BrowserAnimationsModule,
   ],
   providers: [],

@@ -14,3 +14,23 @@ body {
   float: right;
 }
 
+
+
+.mat-mdc-dialog-surface.mdc-dialog__surface{
+  background-color:#fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333333;
+  font-size: 30px;
+  width: 300px;
+  height: 100px;
+  border-radius: 3px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  display: block;
+  min-width: 1800px!important;
+  height: 800px!important;
+}
