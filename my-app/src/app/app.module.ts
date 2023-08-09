@@ -22,6 +22,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { moviesReducer } from './store/reducer/movies.reducer';
+import {UploadComponent} from './upload/upload.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -38,9 +42,13 @@ const Route: Routes = [
     CountComponent,
     MoviesComponent,
     DialogComponent,
+    UploadComponent,
   ],
   imports: [
     HttpClientModule,
+    MatFormFieldModule,
+    MatProgressBarModule,
+    MatInputModule,
     BrowserModule,
     StoreModule.forRoot({ count: counterReducer,movies: moviesReducer}),
     RouterModule.forRoot(Route),
