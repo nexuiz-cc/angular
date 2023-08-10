@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog ,MatDialogRef,MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import { CustomDialogComponent } from 'src/app/compoment/customdialog/customdialog.component';
 
 @Component({
   selector: 'app-dialog',
@@ -10,11 +11,14 @@ import {MatButtonModule} from '@angular/material/button';
 export class DialogComponent {
   constructor(public dialog: MatDialog
     ) {}
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(Dialog, {
-      width: '1000px',
+data:any={
+  title:'DialogTitle',
+  content:'Dialogcontent'
+}
+  openDialog(data:any): void {
+    const dialogRef = this.dialog.open(CustomDialogComponent, {
       panelClass: 'custom-dialog-container',
+      data:data
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -23,17 +27,3 @@ export class DialogComponent {
 }
 
 
-@Component({
-  selector: 'dialog-animations-example-dialog',
-  templateUrl: './dialog-animations-example-dialog.html',
-  standalone: true,
-  imports: [MatButtonModule, MatDialogModule],
-})
-export class Dialog {
-  
-  constructor(public dialogRef: MatDialogRef<Dialog>
-    ) {}
-    close(){
-      this.dialogRef.close()
-    }
-}

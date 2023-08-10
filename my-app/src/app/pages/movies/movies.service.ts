@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, timeout } from 'rxjs/operators';
 import { url1 , headers } from './urlpath';
 import { Store } from '@ngrx/store';
-import { success } from '../store/actions/movies.action';
+import { success } from '../../store/actions/movies.action';
 
 export interface ResData {
   status_code: number;

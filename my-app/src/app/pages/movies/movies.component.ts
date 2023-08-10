@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MoviesService } from './movies.service';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { success } from '../store/actions/movies.action';
+import { success } from '../../store/actions/movies.action';
 import { url1, headers } from './urlpath';
 
 @Component({

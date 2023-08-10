@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContentComponent } from './content/content.component';
-import { MoviesComponent } from './movies/movies.component';
-import { DialogComponent } from './dialog/dialog.component';
-import { UploadComponent } from './upload/upload.component';
+import { ContentComponent } from './pages/content/content.component';
+import { MoviesComponent } from './pages/movies/movies.component';
+import { DialogComponent } from './pages/dialog/dialog.component';
+import { UploadComponent } from './pages/upload/upload.component';
 
 
 @NgModule({
