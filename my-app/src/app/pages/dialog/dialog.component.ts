@@ -1,28 +1,35 @@
-import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { CustomDialogComponent } from 'src/app/compoment/customdialog/customdialog.component';
+import {Component} from '@angular/core';
+import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
+/**
+ * @title Dialog Animations
+ */
 @Component({
-  selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.scss']
+  selector: 'dialog-animations-example',
+  styleUrls: ['dialog-animations-example.scss'],
+  templateUrl: 'dialog-animations-example.html',
+  standalone: true,
+  imports: [MatButtonModule, MatDialogModule],
 })
-export class DialogComponent {
-  constructor(public dialog: MatDialog
-    ) {}
-data:any={
-  title:'DialogTitle',
-  content:'Dialogcontent'
-}
-  openDialog(data:any): void {
-    const dialogRef = this.dialog.open(CustomDialogComponent, {
-      panelClass: 'custom-dialog-container',
-      data:data
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+export class DialogAnimationsExample {
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(DialogAnimationsExampleDialog, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
     });
   }
 }
 
-
+@Component({
+  selector: 'dialog-animations-example-dialog',
+  templateUrl: 'dialog-animations-example-dialog.html',
+  standalone: true,
+  imports: [MatDialogModule, MatButtonModule],
+})
+export class DialogAnimationsExampleDialog {
+  constructor(public dialogRef: MatDialogRef<DialogAnimationsExampleDialog>) {}
+}

@@ -19,21 +19,18 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { DialogComponent } from './pages/dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { moviesReducer } from './store/reducer/movies.reducer';
 import {UploadComponent} from './pages/upload/upload.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatInputModule } from '@angular/material/input';
-import { CustomDialogComponent } from './compoment/customdialog/customdialog.component';
-
-
+import { DialogAnimationsExample } from './pages/dialog/dialog.component';
 
 const Route: Routes = [
   { path: '*', component: AppComponent },
   { path: 'count', component: CountComponent },
-  { path: 'dialog', component: DialogComponent },
+  { path: 'dialog', component: DialogAnimationsExample },
 ];
 
 @NgModule({
@@ -42,9 +39,7 @@ const Route: Routes = [
     AppComponent,
     CountComponent,
     MoviesComponent,
-    DialogComponent,
     UploadComponent,
-    CustomDialogComponent,
   ],
   imports: [
     HttpClientModule,
