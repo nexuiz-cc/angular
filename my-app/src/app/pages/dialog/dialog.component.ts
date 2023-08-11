@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { MatDialog ,MatDialogRef,MatDialogModule} from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
 import { CustomDialogComponent } from 'src/app/compoment/customdialog/customdialog.component';
 
 @Component({
