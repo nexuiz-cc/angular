@@ -1,0 +1,27 @@
+.content{
+  margin-left:80px;
+  color: black;
+  font-family: 'Calling code', Courier, monospace;
+  font-size: 18px;
+ }
+
+ .title{
+    margin-left: 20px;
+    color: black;
+    font-family: 'Calling code', Courier, monospace;
+    font-size: 22px;
+ }
+
+ .actions{
+    margin-left:330px;
+ }
+ .OKBTN{
+    background-color: skyblue;
+    width: 100PX;
+    color: #fff;
+    &:hover{
+        background-color: darkred;
+    }
+}
+ 
+ 

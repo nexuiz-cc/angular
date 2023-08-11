@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import {MatDialog,MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import { CustomDialogComponent } from "../../compoment/customdialog/customdialog.component";
 
 /**
  * @title Dialog Animations
@@ -15,21 +16,16 @@ import {MatButtonModule} from '@angular/material/button';
 export class DialogAnimationsExample {
   constructor(public dialog: MatDialog) {}
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    this.dialog.open(DialogAnimationsExampleDialog, {
-      width: '250px',
-      enterAnimationDuration,
-      exitAnimationDuration,
+  data:any={
+    content:'MatDialogcnetent',
+    width:500,
+    title:'MatDialogtitle',
+    height:150
+  }
+  openDialog(data:any): void {
+    this.dialog.open(CustomDialogComponent, {
+      minWidth: this.data.width,
+      data:data
     });
   }
-}
-
-@Component({
-  selector: 'dialog-animations-example-dialog',
-  templateUrl: 'dialog-animations-example-dialog.html',
-  standalone: true,
-  imports: [MatDialogModule, MatButtonModule],
-})
-export class DialogAnimationsExampleDialog {
-  constructor(public dialogRef: MatDialogRef<DialogAnimationsExampleDialog>) {}
 }

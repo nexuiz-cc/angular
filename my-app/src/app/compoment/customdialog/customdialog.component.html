@@ -1,16 +1,8 @@
-<!-- <h2 mat-dialog-title class="title">{{data.title}}</h2>
+<h1 mat-dialog-title class="title">{{resdata.title}}</h1>
 <div mat-dialog-content class="content">
-  {{data.content}}
-  </div>
-<div mat-dialog-actions align="end">
-  <button mat-button  [mat-dialog-close]="true" cdkFocusInitial>OK</button>
-</div> -->
-
-<h1 mat-dialog-title>Delete file</h1>
-<div mat-dialog-content>
-  Would you like to delete cat.jpeg?
+ {{resdata.content}}
 </div>
-<div mat-dialog-actions>
+<div mat-dialog-actions class="actions">
   <button mat-button mat-dialog-close>No</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+  <button mat-button mat-dialog-close cdkFocusInitial class="OKBTN">OK</button>
 </div>
