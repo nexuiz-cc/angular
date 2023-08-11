@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './pages/content/content.component';
@@ -26,11 +25,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatInputModule } from '@angular/material/input';
 import { DialogAnimationsExample } from './pages/dialog/dialog.component';
+import { NgxEditorModule } from 'ngx-editor';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
+import { EditorComponent } from './pages/editor/editor.component';
 
 const Route: Routes = [
   { path: '*', component: AppComponent },
   { path: 'count', component: CountComponent },
   { path: 'dialog', component: DialogAnimationsExample },
+  { path: 'ed', component: EditorComponent },
 ];
 
 @NgModule({
@@ -40,8 +44,13 @@ const Route: Routes = [
     CountComponent,
     MoviesComponent,
     UploadComponent,
+    EditorComponent,
   ],
   imports: [
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    NgxEditorModule,
     HttpClientModule,
     MatFormFieldModule,
     MatProgressBarModule,
