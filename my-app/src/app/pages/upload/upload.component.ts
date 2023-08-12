@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { FileUploadService } from './uplload.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
@@ -16,12 +17,14 @@ export class UploadComponent  {
 
   fileName = 'Select File';
   fileInfos?: Observable<any>;
-
-  constructor(private uploadService: FileUploadService) {}
+  constructor(private uploadService: FileUploadService
+   ) {}
 
   ngOnInit(): void {
     this.fileInfos = this.uploadService.getFiles();
   }
+
+ 
 
   selectFile(event: any): void {
     if (event.target.files && event.target.files[0]) {

@@ -1,3 +1,24 @@
+
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   margin: 0;
@@ -7,3 +28,23 @@ body {
 html, body {
   height: 100%;
 }
+
+.cunstom-snackBar .mdc-snackbar__surface{
+  background-color: #ce7373!important;
+  width: 200px;
+  margin-right: 50px;
+}
+
+.cunstom-snackBar.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  border-radius: 8px;
+}
+
+.cunstom-snackBar .mat-mdc-snack-bar-container {
+  margin: 22px;
+}
+
+.cunstom-snackBar .mdc-button__label {
+  color: #fff
+}
+
+

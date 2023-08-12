@@ -1,0 +1,34 @@
+
+  
+  $br:33px;
+  :host {
+    display: flex;
+    background-color: #ce7373;
+    border-radius: $br!important;
+  }
+
+  .example-pizza-party {
+    color: rgb(255, 255, 255);
+    background-color: #ce7373;
+    border-radius: $br;
+    font-size: 18px;
+    font-family: 'calling code';
+  }
+
+  .snackBarBtn{
+    color:  rgb(255, 255, 255);
+    background-color: #ce7373;
+    border-radius: $br;
+  }
+
+  .snackBarContainer{
+    color:  rgb(255, 255, 255);;
+    background-color: #ce7373;
+    border-radius: $br;
+  }
+
+  .span{
+    color:  rgb(255, 255, 255);;
+    background-color: #ce7373;
+  }
+

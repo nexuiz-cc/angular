@@ -29,6 +29,8 @@ import { NgxEditorModule } from 'ngx-editor';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { EditorComponent } from './pages/editor/editor.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { SnackBarComponent } from './compoment/snack-bar/snack-bar.component';
 
 const Route: Routes = [
   { path: '*', component: AppComponent },
@@ -45,9 +47,11 @@ const Route: Routes = [
     MoviesComponent,
     UploadComponent,
     EditorComponent,
+    SnackBarComponent,
   ],
   imports: [
     FormsModule,
+    MatSnackBarModule,
     CommonModule,
     ReactiveFormsModule,
     NgxEditorModule,
